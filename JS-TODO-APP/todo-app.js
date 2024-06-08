@@ -77,7 +77,7 @@
 
     // обработчик события для проверки пустое ли поле для ввода
     input.addEventListener("input", function () {
-      input.value.length !== 0
+      input.value.trim().length !== 0
         ? button.removeAttribute("disabled")
         : button.setAttribute("disabled", "");
     });
@@ -173,7 +173,7 @@
       // создаем элемент списка
       let task = createTodoItem({
         id: crypto.randomUUID(),
-        name: todoItemForm.input.value,
+        name: todoItemForm.input.value.trim(),
         done: false,
       });
       // добавляем обработчики для кнопок
